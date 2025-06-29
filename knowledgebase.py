@@ -1,23 +1,11 @@
-############################################################
-# ECS 170: Logic
-############################################################
 
-
-student_name = "Yihan Diao"
-
-
-############################################################
-# Imports
-############################################################
 
 # Include your imports here, if any are used.
 import time
 import itertools
 import copy
 
-############################################################
-# Section 1: Propositional Logic
-############################################################
+
 
 class Expr(object):
     def __hash__(self):
@@ -359,9 +347,7 @@ class KnowledgeBase(object):
 
 
 
-############################################################
-# Section 2: Logic Puzzles
-############################################################
+
 
 # Puzzle 1
 
@@ -382,8 +368,7 @@ mythical_query = Atom("mythical")
 magical_query =  Atom("magical")
 horned_query = Atom("horned")
 
-# Record your answers as True or False; if you wish to use the above queries,
-# they should not be run when this file is loaded
+
 #print(kb1.ask(mythical_query))
 #print(kb1.ask(magical_query))
 #print(kb1.ask(horned_query))
@@ -394,7 +379,6 @@ is_horned = True
 
 # Puzzle 2
 
-# Write an Expr of the form And(...) encoding the constraints
 a = Atom("a")
 j = Atom("j")
 m = Atom("m")
@@ -450,12 +434,12 @@ kb3.tell(rule3)
 
 #print(kb3.get_facts())
 
-#print(kb3.ask(s1)) #afer ten hours debug s2 return True Finally!!!!!!!!!!!!!!!!
+#print(kb3.ask(s1)) 
 #print(kb3.ask(s2))
 #print(kb3.ask(e1))
 #print(kb3.ask(e2))
-# Write your answer to the question in the assignment; the queries you make
-# should not be run when this file is loaded
+
+
 puzzle_3_question = """
 #door 1 says door1 has prize and room2 is empty
 iff s1 correct, then door1says correct
@@ -482,14 +466,9 @@ kc = Atom('kc')
 rule1 = Implies(ia, And(kb_, Not(kc)))
 rule2 = Implies(ib, Not(kb_))
 rule3 = Implies(ic, And(ka, kb_))
-#rule4 = Or(And (ia,  ib, Not(ic)),And(ia, Not(ib), ic),And(Not(ia), ib, ic))
+rule4 = Or(And (ia,  ib, Not(ic)),And(ia, Not(ib), ic),And(Not(ia), ib, ic))
 
-#something wrong in converting to cnf
-#tell cnf form
-#rule1 = And(Or(Not(ia), kb_),Or(Not(ia), Not(kc)))
-#rule2 = Or(Not(ib), Not(kb_))
-#rule3 = And(Or(Not(ic), ka), Or(Not(ic), kb_))
-rule4 = And(Or(Not(ib), Not(ic), Not(ia)),Or(ia, ib),Or(ic, ib),Or(ia, Not(ic), ib),Or(ia, ic),Or(Not(ib), ia, ic))
+
 
 
 kb4.tell(rule1)
@@ -506,7 +485,7 @@ kb4.tell(rule4)
 guilty_suspect = "Brown"
 # guilty_suspect = "Clark"
 
-# Describe the queries you made to ascertain your findings
+
 puzzle_4_question = """
 #rule1 = And(Or(Not(ia), kb_),Or(Not(ia), Not(kc))) this is the first guy says: if a is not inocent then b is familiar with the guy
         and c does not know the guy
